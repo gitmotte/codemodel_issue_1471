@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 import com.sun.codemodel.ClassType;
 import com.sun.codemodel.JClassAlreadyExistsException;
@@ -29,7 +28,7 @@ public class TestJavadoc {
         OutputStreamCodeWriter fileCodeWriter = new OutputStreamCodeWriter(os, "UTF-8");
         model.build(fileCodeWriter);
 
-        String generatedClass = os.toString(StandardCharsets.UTF_8);
+        String generatedClass = os.toString("UTF-8");
         assertEquals("\n"
                 + "package issue_1471;\n"
                 + "\n"
